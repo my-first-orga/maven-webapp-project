@@ -17,5 +17,16 @@ jobs:
         run: |
            sudo apt update -y
            sudo apt install maven -y
+      - name: build a artifactory
+        run: mvn -B clean package
+        
+  sonar-check:
+     runs-on: self-hosted
+     needs: build
+     steps:
+     - name: testing
+       run: |
+         mvn sonar:sonar
+       
 
        
