@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: buil the image
         run: |
-          docker build -t venkat956/ actionsdemo: latest .
+          docker build -t venkat956/ actionsdemo:latest .
 
        
 
