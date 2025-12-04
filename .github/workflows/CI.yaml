@@ -31,6 +31,7 @@ jobs:
             -Dsonar.token=${{ secrets.SONAR_TOKEN }} 
   docker-build:
     runs-on: self-hosted
+    needs: sonar-check
     steps:
       - name: buil the image
         run: |
