@@ -26,7 +26,10 @@ jobs:
      steps:
      - name: testing
        run: |
-         mvn sonar:sonar
+            mvn clean verify sonar:sonar \
+            -Dsonar.host.url=http://15.206.190.185:9000 \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+
        
 
        
