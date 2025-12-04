@@ -28,7 +28,13 @@ jobs:
        run: |
             mvn clean verify sonar:sonar \
             -Dsonar.host.url=http://15.206.190.185:9000 \
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }} 
+  docker-build:
+    runs-on: self-hosted
+    steps:
+      - name: buil the image
+        run: |
+          docker build -t venkat956/ actionsdemo: latest .
 
        
 
